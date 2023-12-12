@@ -1,0 +1,63 @@
+package com.example.activitylifecycle;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.widget.TextView;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {
+    private TextView activity;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        activity = findViewById(R.id.activity);
+        showToast("Creation successfull");
+    }
+    @Override
+    protected void onStart( ) {
+        super.onStart();
+        setContentView(R.layout.activity_main);
+        activity = findViewById(R.id.activity);
+        showToast("Running successfully");
+    }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        setContentView(R.layout.activity_main);
+        activity = findViewById(R.id.activity);
+        showToast("Application Stopped");
+    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        setContentView(R.layout.activity_main);
+        activity = findViewById(R.id.activity);
+        showToast("Application Paused");
+    }
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        setContentView(R.layout.activity_main);
+        activity = findViewById(R.id.activity);
+        showToast("Application Restarted");
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        setContentView(R.layout.activity_main);
+        activity = findViewById(R.id.activity);
+        showToast("Application Resumed");
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        setContentView(R.layout.activity_main);
+        activity = findViewById(R.id.activity);
+        showToast("Application terminated");
+    }
+    private void showToast(String message){
+        Toast.makeText(this,message,Toast.LENGTH_SHORT).show();
+    }
+}
